@@ -408,6 +408,19 @@ export const borderPolygonArray = [
   [-111.818608, 33.378876],
 ];
 
+export const geojsonData = {
+  type: 'FeatureCollection',
+  features: [
+    {
+      type: 'Feature',
+      geometry: {
+        type: 'Polygon',
+        coordinates: [borderPolygonArray],
+      },
+    },
+  ],
+};
+
 export const borderPolygonObject = [
   {longitude: -111.818608, latitude: 33.378876},
   {longitude: -111.814257, latitude: 33.378892},

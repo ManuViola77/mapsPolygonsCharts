@@ -2,12 +2,16 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import MapPolygon from './src/screens/MapPolygon';
-import MapGradientNotWorking from './src/screens/MapGradientNotWorking';
+import MapPolygon from './src/screens/Maps/PolygonMap';
+import MapGradientNotWorking from './src/screens/Maps/PolygonMapGradientNotWorking';
+import MapGeoJson from './src/screens/Maps/GeoJsonMap';
+import MapGeoJsonGradientNotWorking from './src/screens/Maps/GeoJsonMapGradientNotWorking';
 import {
   DASHBOARD,
   MAP_GRADIENT_NOT_WORKING,
   MAP_POLYGON,
+  MAP_GEO_JSON,
+  MAP_GEO_JSON_GRADIENT_NOT_WORKING,
 } from './src/constants/screens';
 import Dashboard from './src/screens/Dashboard';
 
@@ -30,6 +34,16 @@ const App = () => (
         name={MAP_GRADIENT_NOT_WORKING}
         component={MapGradientNotWorking}
         options={{headerTitle: 'Mapa Intento Gradiente'}}
+      />
+      <Stack.Screen
+        name={MAP_GEO_JSON}
+        component={MapGeoJson}
+        options={{headerTitle: 'Mapa GeoJson'}}
+      />
+      <Stack.Screen
+        name={MAP_GEO_JSON_GRADIENT_NOT_WORKING}
+        component={MapGeoJsonGradientNotWorking}
+        options={{headerTitle: 'Mapa GeoJson Intento Gradiente'}}
       />
     </Stack.Navigator>
   </NavigationContainer>

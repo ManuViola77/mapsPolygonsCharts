@@ -1,11 +1,11 @@
 import React from 'react';
 import {View} from 'react-native';
-import MapView, {PROVIDER_GOOGLE, Polygon} from 'react-native-maps';
+import MapView, {PROVIDER_GOOGLE, Geojson} from 'react-native-maps';
 
-import {initialRegion, borderPolygonObject} from '../../data/mapData';
-import styles from './styles';
+import {initialRegion, geojsonData} from '../../../data/mapData';
+import styles from '../styles';
 
-const MapPolygon = () => (
+const GeoJsonMap = () => (
   <View style={styles.container}>
     <MapView
       provider={PROVIDER_GOOGLE}
@@ -14,8 +14,8 @@ const MapPolygon = () => (
       rotateEnabled={false}
       scrollEnabled={false}
       zoomEnabled={false}>
-      <Polygon
-        coordinates={borderPolygonObject}
+      <Geojson
+        geojson={geojsonData}
         strokeWidth={3}
         strokeColor="purple"
         fillColor="pink"
@@ -24,4 +24,4 @@ const MapPolygon = () => (
   </View>
 );
 
-export default MapPolygon;
+export default GeoJsonMap;
