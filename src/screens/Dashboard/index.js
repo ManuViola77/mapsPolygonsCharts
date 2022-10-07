@@ -7,6 +7,7 @@ import {
   MAP_GRADIENT_NOT_WORKING,
   MAP_GEO_JSON,
   MAP_GEO_JSON_GRADIENT_NOT_WORKING,
+  SVG_POLYGON,
 } from '../../constants/screens';
 import Button from '../../components/Button';
 import styles from './styles';
@@ -33,6 +34,10 @@ const Dashboard = () => {
       <Button
         text="Mapa GeoJson Intento Gradiente"
         onPress={() => navigateToScreen(MAP_GEO_JSON_GRADIENT_NOT_WORKING)}
+      />
+      <Button
+        text="Polígono SVG"
+        onPress={() => navigateToScreen(SVG_POLYGON)}
       />
     </View>
   );

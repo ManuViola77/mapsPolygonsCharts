@@ -2,18 +2,20 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
+import Dashboard from './src/screens/Dashboard';
 import MapPolygon from './src/screens/Maps/PolygonMap';
 import MapGradientNotWorking from './src/screens/Maps/PolygonMapGradientNotWorking';
 import MapGeoJson from './src/screens/Maps/GeoJsonMap';
 import MapGeoJsonGradientNotWorking from './src/screens/Maps/GeoJsonMapGradientNotWorking';
+import SvgPolygon from './src/screens/Maps/SvgPolygon';
 import {
   DASHBOARD,
   MAP_GRADIENT_NOT_WORKING,
   MAP_POLYGON,
   MAP_GEO_JSON,
   MAP_GEO_JSON_GRADIENT_NOT_WORKING,
+  SVG_POLYGON,
 } from './src/constants/screens';
-import Dashboard from './src/screens/Dashboard';
 
 const Stack = createStackNavigator();
 
@@ -44,6 +46,11 @@ const App = () => (
         name={MAP_GEO_JSON_GRADIENT_NOT_WORKING}
         component={MapGeoJsonGradientNotWorking}
         options={{headerTitle: 'Mapa GeoJson Intento Gradiente'}}
+      />
+      <Stack.Screen
+        name={SVG_POLYGON}
+        component={SvgPolygon}
+        options={{headerTitle: 'Polígono SVG'}}
       />
     </Stack.Navigator>
   </NavigationContainer>
