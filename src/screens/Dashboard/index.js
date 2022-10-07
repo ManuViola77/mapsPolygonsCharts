@@ -1,7 +1,10 @@
 import React from 'react';
-import {Pressable, Text, View} from 'react-native';
+import {View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+
 import {MAP_POLYGON, MAP_GRADIENT_NOT_WORKING} from '../../constants/screens';
+import Button from '../../components/Button';
+import styles from './styles';
 
 const Dashboard = () => {
   const {navigate} = useNavigation();
@@ -15,13 +18,12 @@ const Dashboard = () => {
   };
 
   return (
-    <View>
-      <Pressable onPress={goToMapPolygon}>
-        <Text>Mapa con Polígono</Text>
-      </Pressable>
-      <Pressable onPress={goToMapGradientNotWorking}>
-        <Text>Mapa con intento de Gradiente</Text>
-      </Pressable>
+    <View style={styles.container}>
+      <Button text="Mapa Polígono Liso" onPress={goToMapPolygon} />
+      <Button
+        text="Mapa Intento Gradiente"
+        onPress={goToMapGradientNotWorking}
+      />
     </View>
   );
 };

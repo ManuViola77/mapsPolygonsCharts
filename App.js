@@ -16,11 +16,20 @@ const Stack = createStackNavigator();
 const App = () => (
   <NavigationContainer>
     <Stack.Navigator>
-      <Stack.Screen name={DASHBOARD} component={Dashboard} />
-      <Stack.Screen name={MAP_POLYGON} component={MapPolygon} />
+      <Stack.Screen
+        name={DASHBOARD}
+        component={Dashboard}
+        options={{headerTitle: 'Opciones'}}
+      />
+      <Stack.Screen
+        name={MAP_POLYGON}
+        component={MapPolygon}
+        options={{headerTitle: 'Mapa Polígono Liso'}}
+      />
       <Stack.Screen
         name={MAP_GRADIENT_NOT_WORKING}
         component={MapGradientNotWorking}
+        options={{headerTitle: 'Mapa Intento Gradiente'}}
       />
     </Stack.Navigator>
   </NavigationContainer>
