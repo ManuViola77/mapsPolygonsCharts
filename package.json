@@ -1,0 +1,46 @@
+{
+  "name": "mapsPolygonsCharts",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "ios:dev": "react-native run-ios",
+    "ios:staging": "react-native run-ios --scheme MaxOpenDoor-QAexternal",
+    "android:dev": "react-native run-android --variant=devDebug --appIdSuffix=dev",
+    "android:beta": "react-native run-android --variant=betaDebug --appIdSuffix=beta",
+    "android:qa": "react-native run-android --variant=qaDebug --appIdSuffix=qa",
+    "android:staging": "react-native run-android --variant=stagingDebug --appIdSuffix=staging",
+    "android:prod": "react-native run-android --variant=prodDebug",
+    "android:release:dev": "cd android && ./gradlew assembleDevRelease",
+    "android:release:qa": "cd android && ./gradlew assembleQARelease",
+    "android:release:staging": "cd android && ./gradlew assembleStagingRelease",
+    "android:release:beta": "cd android && ./gradlew assembleBetaRelease",
+    "android:release:prod": "cd android && ./gradlew assembleProdRelease",
+    "android:bundle:dev": "cd android && ./gradlew bundleDevRelease",
+    "android:bundle:qa": "cd android && ./gradlew bundleQARelease",
+    "android:bundle:staging": "cd android && ./gradlew bundleStagingRelease",
+    "android:bundle:beta": "cd android && ./gradlew bundleBetaRelease",
+    "android:bundle:prod": "cd android && ./gradlew bundleProdRelease",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "react": "18.1.0",
+    "react-native": "0.70.2",
+    "react-native-maps": "^1.3.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.32.0",
+    "jest": "^26.6.3",
+    "metro-react-native-babel-preset": "0.72.3",
+    "react-test-renderer": "18.1.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
