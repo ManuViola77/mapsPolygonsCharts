@@ -22,18 +22,19 @@ const SvgPolygon = () => {
     polygon: '',
   };
   const {polygon = initialValues.polygon} = borderPolygonArray.reduce(
-    ({polygon}, coord) => {
+    ({polygon: accPolygon}, coord) => {
       const polygonLat = getLatScreenValue(coord[1]);
       const polygonLng = getLngScreenValue(coord[0]);
 
       return {
-        polygon: `${polygon} ${polygonLng},${polygonLat}`,
+        polygon: `${accPolygon} ${polygonLng},${polygonLat}`,
       };
     },
     initialValues,
   );
 
-  const fillColorObject = colorScaleForRegion.getColor(1);
+  const value = 10;
+  const fillColorObject = colorScaleForRegion.getColor(value);
   const fillColor = fillColorObject.toRGBAString();
 
   return (
