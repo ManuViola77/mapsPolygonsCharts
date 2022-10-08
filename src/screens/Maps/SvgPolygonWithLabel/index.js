@@ -10,7 +10,6 @@ import polylabel from '../../../utils/polylabel';
 import styles from '../styles';
 
 const CHARACTER_SPACE = 7;
-const VERTICAL_OFFSET = 6.5;
 
 const SvgPolygonWithLabel = () => {
   const {
