@@ -12,6 +12,28 @@ const styles = StyleSheet.create({
   map: {
     ...StyleSheet.absoluteFillObject,
   },
+  centerContainer: (left = 0, top = 0) => ({
+    alignItems: 'center',
+    position: 'absolute',
+    left,
+    top,
+    zIndex: 1000,
+  }),
+  value: {
+    fontSize: 20,
+    fontWeight: '800',
+  },
+  imageContainer: {
+    alignItems: 'center',
+    flex: 1,
+    justifyContent: 'center',
+  },
+  image: {
+    backgroundColor: '#041727',
+    resizeMode: 'contain',
+    height: SCREEN_HEIGHT,
+    width: SCREEN_WIDTH,
+  },
 });
 
 export default styles;

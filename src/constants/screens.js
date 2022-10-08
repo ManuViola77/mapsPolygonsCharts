@@ -4,3 +4,5 @@ export const MAP_GRADIENT_NOT_WORKING = 'MapGradientNotWorking';
 export const MAP_GEO_JSON = 'MapGeoJson';
 export const MAP_GEO_JSON_GRADIENT_NOT_WORKING = 'MapGeoJsonGradientNotWorking';
 export const SVG_POLYGON = 'SvgPolygon';
+export const SVG_POLYGON_WITH_LABEL = 'SvgPolygonWithLabel';
+export const WANTED_MAP = 'WantedMap';

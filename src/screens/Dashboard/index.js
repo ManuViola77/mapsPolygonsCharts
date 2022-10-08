@@ -8,6 +8,8 @@ import {
   MAP_GEO_JSON,
   MAP_GEO_JSON_GRADIENT_NOT_WORKING,
   SVG_POLYGON,
+  SVG_POLYGON_WITH_LABEL,
+  WANTED_MAP,
 } from '../../constants/screens';
 import Button from '../../components/Button';
 import styles from './styles';
@@ -19,6 +21,10 @@ const Dashboard = () => {
 
   return (
     <View style={styles.container}>
+      <Button
+        text="Mapa Queremos"
+        onPress={() => navigateToScreen(WANTED_MAP)}
+      />
       <Button
         text="Mapa Polígono"
         onPress={() => navigateToScreen(MAP_POLYGON)}
@@ -38,6 +44,10 @@ const Dashboard = () => {
       <Button
         text="Polígono SVG"
         onPress={() => navigateToScreen(SVG_POLYGON)}
+      />
+      <Button
+        text="Polígono SVG Valor"
+        onPress={() => navigateToScreen(SVG_POLYGON_WITH_LABEL)}
       />
     </View>
   );

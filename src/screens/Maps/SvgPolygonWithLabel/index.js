@@ -1,14 +1,18 @@
 import React from 'react';
-import {View} from 'react-native';
+import {Text, View} from 'react-native';
 import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 import {Polygon} from 'react-native-svg';
 
 import {borderPolygonArray} from '../../../data/mapData';
 import PolygonGradient from '../../PolygonGradient';
 import usePolygon from '../../../hooks/usePolygon';
+import polylabel from '../../../utils/polylabel';
 import styles from '../styles';
 
-const SvgPolygon = () => {
+const CHARACTER_SPACE = 7;
+const VERTICAL_OFFSET = 6.5;
+
+const SvgPolygonWithLabel = () => {
   const {
     mapRef,
     initialRegion,
@@ -37,6 +41,14 @@ const SvgPolygon = () => {
   const fillColorObject = colorScaleForRegion.getColor(value);
   const fillColor = fillColorObject.toRGBAString();
 
+  const polygonVisualCenter = polylabel([borderPolygonArray]);
+  const valueText = value.toString();
+  const textLength = valueText.length;
+  const horizontalOffset = (textLength * CHARACTER_SPACE) / 2;
+  const centerTop = getLatScreenValue(polygonVisualCenter[1]);
+  const centerLeft =
+    getLngScreenValue(polygonVisualCenter[0]) - horizontalOffset;
+
   return (
     <View style={styles.container}>
       <MapView
@@ -57,8 +69,11 @@ const SvgPolygon = () => {
           strokeWidth="3"
         />
       </PolygonGradient>
+      <View style={styles.centerContainer(centerLeft, centerTop)}>
+        <Text style={styles.value}>{valueText}</Text>
+      </View>
     </View>
   );
 };
 
-export default SvgPolygon;
+export default SvgPolygonWithLabel;
