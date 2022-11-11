@@ -7,6 +7,7 @@ import {borderPolygonArray} from '../../../data/mapData';
 import PolygonGradient from '../../PolygonGradient';
 import usePolygon from '../../../hooks/usePolygon';
 import polylabel from '../../../utils/polylabel';
+import {mapStyle} from '../mapStyle';
 import styles from '../styles';
 
 const CHARACTER_SPACE = 7;
@@ -56,6 +57,7 @@ const SvgPolygonWithLabel = () => {
         style={styles.map}
         initialRegion={initialRegion}
         onMapReady={onMapReady}
+        customMapStyle={mapStyle}
         rotateEnabled={false}
         scrollEnabled={false}
         zoomEnabled={false}
@@ -64,8 +66,8 @@ const SvgPolygonWithLabel = () => {
         <Polygon
           points={polygon}
           fill="url(#fillGradient)"
-          stroke="purple"
-          strokeWidth="3"
+          stroke={fillColor}
+          strokeWidth="1.5"
         />
       </PolygonGradient>
       <View style={styles.centerContainer(centerLeft, centerTop)}>

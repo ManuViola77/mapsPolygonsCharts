@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
     zIndex: 1000,
   }),
   value: {
+    color: 'white',
     fontSize: 20,
     fontWeight: '800',
   },
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
   referenceBar: {
     position: 'absolute',
     bottom: 222,
-    left: 120,
+    left: 40,
   },
   referenceValues: {
     flexDirection: 'row',
@@ -45,6 +46,7 @@ const styles = StyleSheet.create({
     paddingTop: 5,
   },
   referenceText: {
+    color: 'white',
     fontWeight: '800',
   },
 });

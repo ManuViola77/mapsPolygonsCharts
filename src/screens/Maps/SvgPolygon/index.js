@@ -6,6 +6,7 @@ import {Defs, LinearGradient, Polygon, Rect, Stop, Svg} from 'react-native-svg';
 import {borderPolygonArray} from '../../../data/mapData';
 import PolygonGradient from '../../PolygonGradient';
 import usePolygon from '../../../hooks/usePolygon';
+import {mapStyle} from '../mapStyle';
 import styles from '../styles';
 
 const SvgPolygon = () => {
@@ -45,6 +46,7 @@ const SvgPolygon = () => {
         style={styles.map}
         initialRegion={initialRegion}
         onMapReady={onMapReady}
+        customMapStyle={mapStyle}
         rotateEnabled={false}
         scrollEnabled={false}
         zoomEnabled={false}
@@ -53,17 +55,17 @@ const SvgPolygon = () => {
         <Polygon
           points={polygon}
           fill="url(#fillGradient)"
-          stroke="purple"
-          strokeWidth="3"
+          stroke={fillColor}
+          strokeWidth="1.5"
         />
       </PolygonGradient>
       <View style={styles.referenceBar}>
         <Svg height="10" width="251">
           <Defs>
             <LinearGradient id="barGradient" x1="0%" x2="100%" y1="0%" y2="0%">
-              <Stop offset="0%" stopColor="#FFC0CB" stopOpacity="1" />
-              <Stop offset="50%" stopColor="#FFA500" stopOpacity="1" />
-              <Stop offset="100%" stopColor="#FF0000" stopOpacity="1" />
+              <Stop offset="0%" stopColor="#394B59" stopOpacity="1" />
+              <Stop offset="50%" stopColor="#852155" stopOpacity="1" />
+              <Stop offset="100%" stopColor="#7E16FF" stopOpacity="1" />
             </LinearGradient>
           </Defs>
           <Rect

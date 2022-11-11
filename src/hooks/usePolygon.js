@@ -23,8 +23,8 @@ const usePolygon = () => {
   const mapLatDiff = biggestLatitude - smallestLatitude;
   const mapLngDiff = biggestLongitude - smallestLongitude;
 
-  // pink, orange, red
-  const colorStops = ['FFC0CB', 'FFA500', 'FF0000'];
+  // grey, pink , purple
+  const colorStops = ['394B59', '852155', '7E16FF'];
   const colorScaleForRegion = new ColorScale(1, 10, colorStops, 1);
 
   const onMapReady = async () => {
