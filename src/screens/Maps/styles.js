@@ -34,6 +34,19 @@ const styles = StyleSheet.create({
     height: SCREEN_HEIGHT,
     width: SCREEN_WIDTH,
   },
+  referenceBar: {
+    position: 'absolute',
+    bottom: 222,
+    left: 120,
+  },
+  referenceValues: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingTop: 5,
+  },
+  referenceText: {
+    fontWeight: '800',
+  },
 });
 
 export default styles;
