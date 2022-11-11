@@ -1,9 +1,9 @@
 import React from 'react';
 import {View} from 'react-native';
 import MapView, {PROVIDER_GOOGLE, Polygon} from 'react-native-maps';
-import {Defs, LinearGradient, Rect, Stop, Svg} from 'react-native-svg';
 
 import {initialRegion, borderPolygonObject} from '../../../data/mapData';
+import {mapStyle} from '../mapStyle';
 import styles from '../styles';
 import PolygonGradient from '../../PolygonGradient';
 
@@ -13,14 +13,15 @@ const PolygonMapGradientNotWorking = () => (
       provider={PROVIDER_GOOGLE}
       style={styles.map}
       initialRegion={initialRegion}
+      customMapStyle={mapStyle}
       rotateEnabled={false}
       scrollEnabled={false}
       zoomEnabled={false}>
-      <PolygonGradient fillColor="pink">
+      <PolygonGradient fillColor="purple">
         <Polygon
           coordinates={borderPolygonObject}
-          strokeWidth={3}
-          strokeColor="purple"
+          strokeWidth={1.5}
+          strokeColor="pink"
           fillColor="url(#fillGradient)"
         />
       </PolygonGradient>
